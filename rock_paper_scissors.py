@@ -4,14 +4,12 @@ from Tkinter import *
 from ttk import *
 import random
 
+
 def gui():
 
     rock = 1
     paper = 2
     scissors = 3
-
-    names = {rock: 'rock', paper: 'paper', scissors: 'scissors'}
-    rules = {rock: 'scissors', paper: 'rock', scissors: 'paper'}
 
     player_score = 0
     computer_score = 0
@@ -22,15 +20,18 @@ def gui():
 
     def game():
         player = player_choice.get()
+        names = {1: 'Rock', 2: 'Paper', 3: 'Scissors'}
         computer = random.randint(1, 3)
+        computer_choice.set(names[computer])
         result(player, computer)
 
     def result(player, computer):
-        new_score = 0
         if player == computer:
             result_set.set('Tie game.')
         else:
-            if rules[player] == computer:
+            names = {1: 'rock', 2: 'paper', 3: 'scissors'}
+            rules = {'rock': 'scissors', 'paper': 'rock', 'scissors': 'paper'}
+            if rules[names[player]] == names[computer]:
                 result_set.set("You have won.  I can't believe it...")
                 new_score = player_score.get()
                 new_score += 1
