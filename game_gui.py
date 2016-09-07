@@ -19,7 +19,7 @@ intro.pack(side=TOP)
 rps_button = Button(mainframe, text='Rock, Paper, Scissors', command=rock_paper_scissors.gui)
 rps_button.pack()
 
-hm_button = Button(mainframe, text='Hangman', command=hangman.start)
+hm_button = Button(mainframe, text='Hangman', command=hangman.gui)
 hm_button.pack()
 
 pd_button = Button(mainframe, text='Poker Dice', command=poker_dice.start)
